@@ -279,13 +279,27 @@
       <artifactId>jsoup</artifactId>
       <version>1.8.3</version>
     </dependency>
-
-
-
-
-
-
   </dependencies>
+
+  <!-- 因为resources若不配置，可能会发送打包不全-->
+  <resources>
+    <resource>
+      <!--需要打包的目录-->
+      <directory>src/main/java</directory>
+      <!--目录中的文件类型-->
+      <includes>
+        <include>**/*.xml</include>
+        <include>**/*.properties</include>
+      </includes>
+    </resource>
+    <resource>
+      <directory>src/main/resources</directory>
+      <includes>
+        <include>**/*.xml</include>
+        <include>**/*.properties</include>
+      </includes>
+    </resource>
+  </resources>
 
   <build>
     <finalName>blog</finalName>
