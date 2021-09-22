@@ -1,5 +1,6 @@
 package com.blog.controller;
 
+import com.blog.entity.Blogger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BloggerController {
 
     @RequestMapping("/login")
-    public String login(){
+    public String login(Blogger blogger){
         return null;
     }
 }
