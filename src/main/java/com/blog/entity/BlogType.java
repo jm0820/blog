@@ -13,11 +13,11 @@ public class BlogType implements Serializable {
   /**该类型下博客数量*/
   private Integer blog;
 
-  public int getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
@@ -31,7 +31,7 @@ public class BlogType implements Serializable {
   }
 
 
-  public int getOrderNo() {
+  public Integer getOrderNo() {
     return orderNo;
   }
 
