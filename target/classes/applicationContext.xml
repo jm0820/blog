@@ -17,9 +17,10 @@
 
     <!-- 配置数据源-->
         <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-            <property name="url" value="jdbc:mysql://localhost:3306/db_blog?useUnicode=true&amp;characterEncoding=UTF-8"></property>
+            <property name="url" value="jdbc:mysql://localhost:3306/db_blog?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"></property>
             <property name="username" value="root"></property>
             <property name="password" value="1234567890"></property>
+            <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
         </bean>
 
         <!--mybatis 的sqlsessionFactory-->
@@ -67,11 +68,13 @@
         </bean>
         <!--保证实现了shiro内部lifecycle函数的bean执行-->
         <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
-        <!--开启shiro 的注解-->
+
+    <!--开启shiro 的注解-->
         <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"/>
         <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
             <property name="securityManager" ref="securityManager"/>
         </bean>
+
         <!--配置事务通知属性-->
         <tx:advice id="txAdvice" transaction-manager="transactionManager">
             <!-- 定义事务传播属性-->
