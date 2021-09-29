@@ -1,4 +1,4 @@
-package com.sample;
+package com.blog.entity;
 
 
 import java.io.Serializable;
@@ -21,13 +21,16 @@ public class Blog implements Serializable {
   /**内容*/
   private String content;
   /**博客类型*/
-  private Integer typeId;
+  private BlogType blogType;
   /**关键字*/
   private String keyWord;
   /**纯文本格式的内容*/
   private String contentNoTag;
   /**发表时间*/
   private String releaseDateStr;
+
+  /**博客数量*/
+  private Integer blogCount;
 
   public Integer getId() {
     return id;
@@ -85,13 +88,6 @@ public class Blog implements Serializable {
     this.content = content;
   }
 
-  public Integer getTypeId() {
-    return typeId;
-  }
-
-  public void setTypeId(Integer typeId) {
-    this.typeId = typeId;
-  }
 
   public String getKeyWord() {
     return keyWord;
@@ -115,5 +111,21 @@ public class Blog implements Serializable {
 
   public void setReleaseDateStr(String releaseDateStr) {
     this.releaseDateStr = releaseDateStr;
+  }
+
+  public BlogType getBlogType() {
+    return blogType;
+  }
+
+  public void setBlogType(BlogType blogType) {
+    this.blogType = blogType;
+  }
+
+  public Integer getBlogCount() {
+    return blogCount;
+  }
+
+  public void setBlogCount(Integer blogCount) {
+    this.blogCount = blogCount;
   }
 }
